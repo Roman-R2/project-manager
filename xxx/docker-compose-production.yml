@@ -1,0 +1,14 @@
+version: '3'
+services:
+  manager-nginx:
+    image: registry/manager-ngnix:0
+    restart: always
+    depends_on:
+      - manager-php-fpm
+    ports:
+      - "8080:80"
+  manager-php-fpm:
+    image: registry/manager-php-fpm:0
+    restart: always
+  manager-php-cli:
+      image: registry/manager-php-cli:0

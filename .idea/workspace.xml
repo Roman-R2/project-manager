@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1b9ce5e8-339a-4520-a369-0d2506eabb5f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T024511.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T024512.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T024532.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T024701.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T024703.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T025109.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T025114.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T025437.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T025513.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T025514.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T025517.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T030916.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T031024.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T031050.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T031052.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T031056.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T031058.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T031201.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T031203.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T031204.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T032901.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033023.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033025.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033026.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033035.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033038.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033047.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033051.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033105.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033106-1.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033106.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033107-1.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033107-2.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033107.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033108-1.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033108.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033242.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033243.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033632.404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033637.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T033648.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T040135.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T040354.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T040358.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T040359.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T041420.403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2020-02-13T041854.200.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/bin/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/docker/development/apache.docker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/docker/development/nginx.docker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/docker/development/nginx/default.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/docker/development/php-cli.docker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/docker/development/php-fpm.docker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/docker/production/apache.docker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/docker/production/nginx.docker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/docker/production/nginx/default.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/docker/production/php-cli.docker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/docker/production/php-fpm.docker" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xxx/docker-compose-production.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xxx/docker-compose.yml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://restClient/response3.html" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1XiCKjGU6TkrhhyNrWa4PBuE7X6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/manager" />
+    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/html/index.php" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/html" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="html" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="thml" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8081" />
+          <option name="urlPath" value="index.php" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8081" />
+          <option name="urlPath" value="/index.php" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8081" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="/resources" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="cli" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="cli" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Makefile.cli" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b9ce5e8-339a-4520-a369-0d2506eabb5f" name="Default Changelist" comment="" />
+      <created>1581524306301</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581524306301</updated>
+      <workItem from="1581524324047" duration="1284000" />
+      <workItem from="1581586074638" duration="3940000" />
+      <workItem from="1581591037242" duration="954000" />
+      <workItem from="1581592285985" duration="1855000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="489" y="291" key="com.intellij.ide.util.TipDialog" timestamp="1581524345388">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="489" y="291" key="com.intellij.ide.util.TipDialog/67.27.1533.873@67.27.1533.873" timestamp="1581524345388" />
+  </component>
+</project>
