@@ -1,5 +1,6 @@
 up: docker-up
-init: docker-down-clear manager-clear docker-pull docker-build docker-up manager-init
+
+init: docker-down docker-pull docker-duild docker-up
 
 docker-up:
 	docker-compose up -d
@@ -17,14 +18,14 @@ cli:
 	docker-compose run --rm manager-php-cli php bin/app.php
 
 build-production:
-	docker build --pull --file=manager/docker/production/nginx.docker --tag registry/manager-nginx:0 manager
-	docker build --pull --file=manager/docker/production/php-fpm.docker --tag registry/manager-php-fpm:0 manager
-	docker build --pull --file=manager/docker/production/php-cli.docker --tag registry/manager-php-cli:0 manager
+	docker build --pull --file=manager/docker/production/nginx.docker --tag ${REGISTRY_ADDRESS}/manager-nginx:${IMAGE_TAG} manager
+	docker build --pull --file=manager/docker/production/php-fpm.docker --tag ${REGISTRY_ADDRESS}/manager-php-fpm:${IMAGE_TAG} manager
+	docker build --pull --file=manager/docker/production/php-cli.docker --tag ${REGISTRY_ADDRESS}/manager-php-cli:${IMAGE_TAG} manager
 
 push-production:
-	docker push registry/manager-nginx:0
-	docker push registry/manager-php-fpm:0
-	docker push registry/manager-php-cli:0
+	docker push ${REGISTRY_ADDRESS}/manager-nginx:0
+	docker push ${REGISTRY_ADDRESS}/manager-php-fpm:0
+	docker push ${REGISTRY_ADDRESS}/manager-php-cli:0
 
 deploy-production:
 	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'rm -rf docker-compose.yml .env'
