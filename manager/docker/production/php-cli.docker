@@ -4,7 +4,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/bin --fil
 ENV COMPOSER_ALLOW_SUPERUSER 1
 WORKDIR /app
 COPY ./composer.json ./composer.lock ./
-RUN composer install --no-dev --prefer-dist --optimize-autoloader
+RUN composer install --no-dev --no-scripts --prefer-dist --optimize-autoloader
 
 FROM php:7.2-cli
 RUN docker-php-ext-install opcache

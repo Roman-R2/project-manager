@@ -1,6 +1,6 @@
 up: docker-up
-
 init: docker-down docker-pull docker-duild docker-up manager-init
+test: manager-test
 
 docker-up:
 	docker-compose up -d
@@ -18,6 +18,9 @@ manager-init: manager-composer-install
 
 manager-composer-install:
 	docker-compose run --rm manager-php-cli composer install
+
+manager-test:
+	docker-compose run --rm manager-php-cli php bin/phpunit
 
 cli:
 	docker-compose run --rm manager-php-cli php bin/app.php
@@ -37,6 +40,7 @@ deploy-production:
 	scp -P ${PRODUCTION_PORT} docker-compose-production.yml ${PRODUCTION_HOST}:docker-compose.yml
 	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'echo "REGISTRY_ADDRESS=${REGISTRY_ADDRESS}" >> .env'
 	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'echo "IMAGE_TAG=${IMAGE_TAG}" >> .env'
-	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'echo "IMAGE_TAG=${IMAGE_TAG}" >> .env'
+	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'echo "MANAGER_APP_SECRET=${MANAGER_APP_SECRET}" >> .env'
+	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'echo "MANGER_DB_PASSWORD=${MANGER_DB_PASSWORD}" >> .env'
 	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'docker-compose pull'
 	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'docker-compose --build -d'
