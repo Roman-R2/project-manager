@@ -1,5 +1,5 @@
 up: docker-up
-init: docker-down docker-pull docker-duild docker-up manager-init
+init: docker-down-clear manager-clear docker-pull docker-duild docker-up manager-init
 test: manager-test
 
 docker-up:
@@ -7,6 +7,9 @@ docker-up:
 
 docker-down:
 	docker-compose down --remove-orphans
+
+docker-down-clear:
+	docker-compose down -v --remove-orphans
 
 docker-pull:
 	docker-compose pull
@@ -18,6 +21,9 @@ manager-init: manager-composer-install
 
 manager-composer-install:
 	docker-compose run --rm manager-php-cli composer install
+
+manager-clear:
+	docker run --rm -v ${PWD}/manager:/app --workdir=/app alpine rm -f .ready
 
 manager-test:
 	docker-compose run --rm manager-php-cli php bin/phpunit
