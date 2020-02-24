@@ -2,62 +2,34 @@
 
 declare(strict_types=1);
 
-namespace App\Model\User\UseCase\SignUp\Request;
+namespace App\Model\User\UseCase\SignUp\Confirm;
 
 use App\Model\Flusher;
 use App\Model\User\Entity\User\User;
-use App\Model\User\Entity\User\Id;
-use App\Model\User\Entity\User\Email;
 use App\Model\User\Entity\User\UserRepository;
-use App\Model\User\Service\ConfirmTokinizer;
-use App\Model\User\Service\ConfirmTokenSender;
-use App\Model\User\Service\PasswordHasher;
 
 
 class Handler
 {
     private $users;
-    private $hasher;
     private $flusher;
-    private $tokinizer;
-    private $sender;
 
     public function __construct(
         UserRepository $users,
-        PasswordHasher $hasher,
-        ConfirmTokinizer $tokinizer,
-        ConfirmTokenSender $sender,
         Flusher $flusher
     )
     {
         $this->users = $users;
-        $this->hasher = $hasher;
-        $this->tokinizer = $tokinizer;
-        $this->sender = $sender;
         $this->flusher = $flusher;
     }
 
     public function handle (Command $command): void
     {
-        $email = new Email($command->email);
-
-        if ($this->users->hasByEmail($email)) {
-            throw new \DomainException('User already exists.');
+        if (!$user = $this->users->findByConfirmToken($command->token)) {
+            throw new \DomainException('Incorrect of confirmed token.');
         }
 
-
-
-        $user = new User(
-            Id::next(),
-            new \DateTimeImmutable(),
-            $email,
-            $this->hasher->hash($command->password),
-            $token = $this->tokinizer->generete()
-        );
-
-        $this->users->add($user);
-
-        $this->sender->send($email, $token);
+        $user->confirmSignUp();
 
         $this->flusher-flush();
     }
