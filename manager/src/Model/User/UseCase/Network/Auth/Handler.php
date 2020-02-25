@@ -26,15 +26,13 @@ class Handler
             throw new \DomainException('User already exists.');
         }
 
-        $user = new User(
+        $user = User::signUpByNetwork(
             Id::next(),
-            new \DateTimeImmutable()
-        );
-
-        $user->signUpByNetwork(
+            new \DateTimeImmutable(),
             $command->network,
             $command->identity
         );
+
 
         $this->users->add($user);
 

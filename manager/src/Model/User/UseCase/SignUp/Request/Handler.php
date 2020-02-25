@@ -46,13 +46,9 @@ class Handler
         }
 
 
-
-        $user = new User(
+        $user = User::signUpByEmail(
             Id::next(),
-            new \DateTimeImmutable()
-        );
-
-        $user->signUpByEmail(
+            new \DateTimeImmutable(),
             $email,
             $this->hasher->hash($command->password),
             $token = $this->tokinizer->generete()
@@ -63,48 +59,5 @@ class Handler
         $this->sender->send($email, $token);
 
         $this->flusher-flush();
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class Handler0
-{
-    private $em;
-
-    public function __construct(EntityManagerInterface $em)
-    {
-        $this->em = $em;
-    }
-
-    public function handle(Command $command) : void
-    {
-        $email = mb_strtolower($command->email);
-
-        if ($this->em->getRepository(User::class)->findOneBy(['email' => $email])){
-            throw new \DomainException('User alredy exists');
-        }
-
-        $user = new User(
-            Uuid::uuid4()->toString(),
-            new \DateTimeImmutable(),
-            $email,
-            password_hash($command->password, PASSWORD_ARGON2I)
-        );
-
-        $this->em->persist($user);
-        $this->em->flush();
-
     }
 }

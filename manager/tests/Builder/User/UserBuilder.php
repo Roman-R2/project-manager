@@ -14,6 +14,7 @@ class UserBuilder
 {
     private $id;
     private $date;
+    private $name;
 
     private $email;
     private $hash;
@@ -23,10 +24,13 @@ class UserBuilder
     private $network;
     private $identity;
 
+    private $role;
+
     public function __construct()
     {
         $this->id = Id::next();
         $this->date = new \DateTimeImmutable();
+        $this->name = new Name('First', 'Last');
     }
 
     public function viaEmail(Email $email = null, string $hash = null, string $token = null): self
@@ -60,15 +64,28 @@ class UserBuilder
         return $clone;
     }
 
+    public function withName(Name $name): self
+    {
+        $clone = clone $this;
+        $clone->name = $name;
+        return $clone;
+    }
+
+    public function withRole(Role $role): self
+    {
+        $clone = clone $this;
+        $clone->role = $role;
+        return $clone;
+    }
+
     public function build(): User
     {
-        $user = new User (
-            $this->id,
-            $this->date
-        );
+        $user = null;
 
         if ($this->email) {
-            $user->signUpByEmail(
+            $user = User::signUpByEmail(
+                $this->id,
+                $this->date,
                 $this->email,
                 $this->hash,
                 $this->token
@@ -80,7 +97,9 @@ class UserBuilder
         }
 
         if ($this->network) {
-            $user->signUpByNetwork(
+            $user = User::signUpByNetwork(
+                $this->id,
+                $this->date,
                 $this->network,
                 $this->identity
             );
@@ -88,6 +107,10 @@ class UserBuilder
 
         if (!$user) {
             throw new \BadMethodCallException('Specify via method.');
+        }
+
+        if ($this->role) {
+            $user->changeRole($this->role);
         }
 
         return $user;

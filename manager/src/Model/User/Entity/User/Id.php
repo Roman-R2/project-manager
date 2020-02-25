@@ -9,7 +9,6 @@ use Webmozart\Assert\Assert;
 
 class Id
 {
-
     private $value;
 
     public function __construct(string $value)
@@ -18,7 +17,7 @@ class Id
         $this->value = $value;
     }
 
-    public static function next() : self
+    public static function next(): self
     {
         return new self(Uuid::uuid4()->toString());
     }
@@ -26,5 +25,10 @@ class Id
     public function getValue(): string
     {
         return $this->value;
+    }
+
+    public function __toString(): string
+    {
+        return $this->getValue();
     }
 }

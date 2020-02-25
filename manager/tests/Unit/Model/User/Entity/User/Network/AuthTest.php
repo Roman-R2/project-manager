@@ -13,17 +13,17 @@ class AuthTest extends TestCase
 {
     public function testSuccess(): void
     {
-        $user = new User(
-            Id::next(),
-            new \DateTimeImmutable()
-        );
-
-        $user->signUpByNetwork(
+        $user = User::signUpByNetwork(
+            $id = Id::next(),
+            $date = new \DateTimeImmutable(),
             $network = 'vk',
-            $identity = '000001'
+            $identity = '0000001'
         );
 
         self::assertTrue($user->isActive());
+
+        self::assertEquals($id, $user->getId());
+        self::assertEquals($date, $user->getDate());
 
         self::assertCount(1, $networks = $user->getNetworks());
         self::assertInstanceOf(Network::class, $first = reset($networks));
