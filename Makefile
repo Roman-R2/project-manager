@@ -1,5 +1,5 @@
 up: docker-up
-init: docker-down-clear manager-clear docker-pull docker-duild docker-up manager-init
+init: docker-down manager-clear docker-pull docker-duild docker-up manager-init
 test: manager-test
 
 docker-up:

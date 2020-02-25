@@ -49,7 +49,10 @@ class Handler
 
         $user = new User(
             Id::next(),
-            new \DateTimeImmutable(),
+            new \DateTimeImmutable()
+        );
+
+        $user->signUpByEmail(
             $email,
             $this->hasher->hash($command->password),
             $token = $this->tokinizer->generete()
