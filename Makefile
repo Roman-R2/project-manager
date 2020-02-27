@@ -1,5 +1,5 @@
 up: docker-up
-init: docker-down manager-clear docker-pull docker-duild docker-up manager-init
+init: docker-down-clear docker-pull docker-duild docker-up manager-init
 test: manager-test
 
 docker-up:
@@ -17,13 +17,16 @@ docker-pull:
 docker-duild:
 	docker-compose build
 
-manager-init: manager-composer-install
+manager-init: manager-composer-install manager-wait-db manager-migrations
 
 manager-composer-install:
 	docker-compose run --rm manager-php-cli composer install
 
-manager-clear:
-	docker run --rm -v ${PWD}/manager:/app --workdir=/app alpine rm -f .ready
+manager-wait-db:
+	until docker-compose exec -T manager-postgres pg_isready --timeout=0 --dbname=app ; do sleep 1 ; done
+
+manager-migrations:
+	docker-compose run --rm manager-php-cli php bin/console doctrine:migrations:migrate --no-interaction
 
 manager-test:
 	docker-compose run --rm manager-php-cli php bin/phpunit

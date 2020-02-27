@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Model\User\Service;
+namespace App\Model\User\Entity\Service;
 
 use Ramsey\Uuid\Uuid;
 
-class ConfirmTokinizer
+class ConfirmTokenizer
 {
     public function generate(): string
     {

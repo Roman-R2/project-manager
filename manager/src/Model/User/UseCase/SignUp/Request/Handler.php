@@ -5,39 +5,38 @@ declare(strict_types=1);
 namespace App\Model\User\UseCase\SignUp\Request;
 
 use App\Model\Flusher;
-use App\Model\User\Entity\User\User;
-use App\Model\User\Entity\User\Id;
 use App\Model\User\Entity\User\Email;
+use App\Model\User\Entity\User\Id;
+use App\Model\User\Entity\User\User;
 use App\Model\User\Entity\User\UserRepository;
-use App\Model\User\Service\ConfirmTokinizer;
-use App\Model\User\Service\ConfirmTokenSender;
-use App\Model\User\Service\PasswordHasher;
-
+use App\Model\User\Entity\Service\PasswordHasher;
+use App\Model\User\Entity\Service\ConfirmTokenizer;
+use App\Model\User\Entity\Service\ConfirmTokenSender;
 
 class Handler
 {
     private $users;
     private $hasher;
-    private $flusher;
-    private $tokinizer;
+    private $tokenizer;
     private $sender;
+    private $flusher;
 
     public function __construct(
         UserRepository $users,
         PasswordHasher $hasher,
-        ConfirmTokinizer $tokinizer,
+        ConfirmTokenizer $tokenizer,
         ConfirmTokenSender $sender,
         Flusher $flusher
     )
     {
         $this->users = $users;
         $this->hasher = $hasher;
-        $this->tokinizer = $tokinizer;
+        $this->tokenizer = $tokenizer;
         $this->sender = $sender;
         $this->flusher = $flusher;
     }
 
-    public function handle (Command $command): void
+    public function handle(Command $command): void
     {
         $email = new Email($command->email);
 
@@ -45,19 +44,18 @@ class Handler
             throw new \DomainException('User already exists.');
         }
 
-
         $user = User::signUpByEmail(
             Id::next(),
             new \DateTimeImmutable(),
             $email,
             $this->hasher->hash($command->password),
-            $token = $this->tokinizer->generete()
+            $token = $this->tokenizer->generate()
         );
 
         $this->users->add($user);
 
         $this->sender->send($email, $token);
 
-        $this->flusher-flush();
+        $this->flusher->flush();
     }
 }

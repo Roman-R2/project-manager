@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Model\User\Service;
+namespace App\Model\User\Entity\Service;
 
 class PasswordHasher
 {
@@ -13,5 +13,10 @@ class PasswordHasher
             throw new \RuntimeException('Unable to generate hash.');
         }
         return $hash;
+    }
+
+    public function validate(string $password, string $hash): bool
+    {
+        return password_verify($password, $hash);
     }
 }

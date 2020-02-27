@@ -320,7 +320,6 @@ class User
     {
         return $this->networks->toArray();
     }
-
     /**
      * @ORM\PostLoad()
      */

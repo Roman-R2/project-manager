@@ -19,16 +19,4 @@ class Command
      * @Assert\NotBlank()
      */
     public $role;
-
-    public function __construct(string $id)
-    {
-        $this->id = $id;
-    }
-
-    public static function fromUser(User $user): self
-    {
-        $command = new self($user->getId()->getValue());
-        $command->role = $user->getRole()->getName();
-        return $command;
-    }
 }
