@@ -48,21 +48,6 @@ class User
      */
     private $confirmToken;
     /**
-     * @var Name
-     * @ORM\Embedded(class="Name")
-     */
-    private $name;
-    /**
-     * @var Email|null
-     * @ORM\Column(type="user_user_email", name="new_email", nullable=true)
-     */
-    private $newEmail;
-    /**
-     * @var string|null
-     * @ORM\Column(type="string", name="new_email_token", nullable=true)
-     */
-    private $newEmailToken;
-    /**
      * @var ResetToken|null
      * @ORM\Embedded(class="ResetToken", columnPrefix="reset_token_")
      */
@@ -82,11 +67,6 @@ class User
      * @ORM\OneToMany(targetEntity="Network", mappedBy="user", orphanRemoval=true, cascade={"persist"})
      */
     private $networks;
-    /**
-     * @ORM\Version()
-     * @ORM\Column(type="integer")
-     */
-    private $version;
 
     private function __construct(Id $id, \DateTimeImmutable $date)
     {
@@ -183,42 +163,6 @@ class User
         $this->resetToken = null;
     }
 
-    public function requestEmailChanging(Email $email, string $token): void
-    {
-        if (!$this->isActive()) {
-            throw new \DomainException('User is not active.');
-        }
-        if ($this->email && $this->email->isEqual($email)) {
-            throw new \DomainException('Email is already same.');
-        }
-        $this->newEmail = $email;
-        $this->newEmailToken = $token;
-    }
-
-    public function confirmEmailChanging(string $token): void
-    {
-        if (!$this->newEmailToken) {
-            throw new \DomainException('Changing is not requested.');
-        }
-        if ($this->newEmailToken !== $token) {
-            throw new \DomainException('Incorrect changing token.');
-        }
-        $this->email = $this->newEmail;
-        $this->newEmail = null;
-        $this->newEmailToken = null;
-    }
-
-    public function changeName(Name $name): void
-    {
-        $this->name = $name;
-    }
-
-    public function edit(Email $email, Name $name): void
-    {
-        $this->name = $name;
-        $this->email = $email;
-    }
-
     public function changeRole(Role $role): void
     {
         if ($this->role->isEqual($role)) {
@@ -281,21 +225,6 @@ class User
     public function getConfirmToken(): ?string
     {
         return $this->confirmToken;
-    }
-
-    public function getName(): Name
-    {
-        return $this->name;
-    }
-
-    public function getNewEmail(): ?Email
-    {
-        return $this->newEmail;
-    }
-
-    public function getNewEmailToken(): ?string
-    {
-        return $this->newEmailToken;
     }
 
     public function getResetToken(): ?ResetToken
