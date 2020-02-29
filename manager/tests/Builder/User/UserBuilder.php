@@ -30,7 +30,6 @@ class UserBuilder
     {
         $this->id = Id::next();
         $this->date = new \DateTimeImmutable();
-        $this->name = new Name('First', 'Last');
     }
 
     public function viaEmail(Email $email = null, string $hash = null, string $token = null): self
