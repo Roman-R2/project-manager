@@ -9,6 +9,7 @@
     "ext-json": "^1.6",
     "finesse/swiftmailer-defaults-plugin": "^2.0",
     "knpuniversity/oauth2-client-bundle": "^1.33",
+    "league/oauth2-client": "^2.4",
     "league/oauth2-facebook": "^2.0",
     "ramsey/uuid": "^3.9",
     "sensio/framework-extra-bundle": "^5.1",
@@ -32,6 +33,7 @@
     "symfony/twig-pack": "*",
     "symfony/validator": "4.4.*",
     "symfony/web-link": "4.4.*",
+    "symfony/webpack-encore-bundle": "^1.7",
     "symfony/yaml": "4.4.*",
     "webmozart/assert": "^1.4"
   },

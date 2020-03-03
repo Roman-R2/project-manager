@@ -1,6 +1,11 @@
 up: docker-up
-init: docker-down-clear docker-pull docker-duild docker-up manager-init
+down: docker-down
+restart: docker-down docker-up
+init: docker-down-clear manager-clear docker-pull docker-duild docker-up manager-init
 test: manager-test
+
+my:
+	sudo chown -R roman:roman manager
 
 docker-up:
 	docker-compose up -d
@@ -17,10 +22,17 @@ docker-pull:
 docker-duild:
 	docker-compose build
 
-manager-init: manager-composer-install manager-wait-db manager-migrations
+manager-init: manager-composer-install manager-assets-install manager-wait-db manager-migrations manager-fixtures manager-ready
+
+manager-clear:
+	docker run --rm -v ${PWD}/manager:/app --workdir=/app alpine rm -f .ready
 
 manager-composer-install:
 	docker-compose run --rm manager-php-cli composer install
+
+manager-assets-install:
+	docker-compose run --rm manager-node yarn install
+	docker-compose run --rm manager-node npm rebuild node-sass
 
 manager-wait-db:
 	until docker-compose exec -T manager-postgres pg_isready --timeout=0 --dbname=app ; do sleep 1 ; done
@@ -30,6 +42,9 @@ manager-migrations:
 
 manager-fixtures:
 	docker-compose run --rm manager-php-cli php bin/console doctrine:fixtures:load --no-interaction
+
+manager-ready:
+	docker run --rm -v ${PWD}/manager:/app --workdir=/app alpine touch .ready
 
 manager-test:
 	docker-compose run --rm manager-php-cli php bin/phpunit

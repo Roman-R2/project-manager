@@ -16,8 +16,10 @@ class FacebookController extends AbstractController
      * @param ClientRegistry $clientRegistry
      * @return Response
      */
+
     public function connect(ClientRegistry $clientRegistry): Response
     {
+
         return $clientRegistry
             ->getClient('facebook_main')
             ->redirect(['public_profile']);
@@ -29,7 +31,6 @@ class FacebookController extends AbstractController
      */
     public function check(): Response
     {
-        die('Hello');
         return $this->redirectToRoute('home');
     }
 }
