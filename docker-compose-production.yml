@@ -6,7 +6,7 @@ services:
     depends_on:
       - manager-php-fpm
     ports:
-      - "8080:80"
+      - "80:80"
   manager-php-fpm:
     image: ${REGISTRY_ADDRESS}/manager-php-fpm:${IMAGE_TAG}
     restart: always
