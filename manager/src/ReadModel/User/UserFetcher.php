@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\ReadModel\User;
 
+use App\Model\User\Entity\User\User;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\FetchMode;
 
@@ -69,5 +70,61 @@ class UserFetcher
         $result = $stmt->fetch();
 
         return $result ?: null;
+    }
+
+    public function findByEmail(string $email): ?ShortView
+    {
+        $stmt = $this->connection->createQueryBuilder()
+            ->select(
+                'id',
+                'email',
+                'role',
+                'status'
+            )
+            ->from('user_users')
+            ->where('email = :email')
+            ->setParameter(':email', $email)
+            ->execute();
+
+        $stmt->setFetchMode(FetchMode::CUSTOM_OBJECT, ShortView::class);
+        $result = $stmt->fetch();
+
+        return $result ?: null;
+    }
+
+    public function findDetail(string $id): DetailView
+    {
+        $stmt = $this->connection->createQueryBuilder()
+            ->select(
+                'id',
+                'date',
+                'email',
+                'role',
+                'status'
+            )
+            ->from('user_users')
+            ->where('id = :id')
+            ->setParameter(':id', $id)
+            ->execute();
+
+        $stmt->setFetchMode(FetchMode::CUSTOM_OBJECT, DetailView::class);
+
+        $view = $stmt->fetch();
+
+        $stmt = $this->connection->createQueryBuilder()
+            ->select(
+                'network',
+                'identity'
+            )
+            ->from('user_user_networks')
+            ->where('id = :id')
+            ->setParameter(':id', $id)
+            ->execute();
+
+        $stmt->setFetchMode(FetchMode::CUSTOM_OBJECT, NetworkView::class);
+
+        $view->networks = $stmt->fetchAll();
+
+        return $view;
     }
 }

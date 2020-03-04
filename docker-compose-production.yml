@@ -29,6 +29,15 @@ services:
       POSTGRES_USER: app
       POSTGRES_PASSWORD: ${MANAGER_DB_PASSWORD}
       POSTGRES_DB: app
+  manager-redis:
+    image: redis:3.0-alpine
+    restart: always
+    volumes:
+      - manager-redis:/data
+    command:
+      - 'redis-server'
+      - '--requirepass ${MANAGER_REDIS_PASSWORD}'
 
 volumes:
   manager-postgres:
+  manager-redis:

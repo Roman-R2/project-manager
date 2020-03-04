@@ -1,49 +1,76 @@
-{% extends 'base.html.twig' %}
+{% extends 'auth.html.twig' %}
 
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-    <form method="post">
-        {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
-
-        {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                {% if app.user %}
+                    <div>
+                        Выполнен вход от имени пользователя {{ app.user.username }}, <a href="{{ path('app_logout') }}">Выйти</a>
+                    </div>
+                {% endif %}
+                <div class="card-group">
+                    <div class="card p-4">
+                        <div class="card-body">
+                            {% include '_flashes.html.twig' %}
+                            <h1>Вход</h1>
+                            <form method="POST">
+                                {% if error %}
+                                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                {% endif %}
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                <p class="text-muted">Войдите в свою учетную запись</p>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="cil-user"></i>
+                                        </span></div>
+                                    <input class="form-control" type="email" name="email" value="{{ last_username }}"
+                                           placeholder="Email">
+                                </div>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="cil-lock-locked"></i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="password" name="password" placeholder="Пароль"
+                                           required>
+                                </div>
+                                <div class="input-group mb-4">
+                                    <div class="checkbox mb-3">
+                                        <label>
+                                            <input type="checkbox" name="_remember_me"> Запомнить меня
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button class="btn btn-primary px-4" type="submit">Войти</button>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <a href="{{ path('auth.reset') }}" class="btn btn-link px-0" type="button">Забыли
+                                            пароль?</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                        <div class="card-body text-center">
+                            <div>
+                                <h2>Регистрация</h2>
+                                <p></p>
+                                <a href="{{ path('auth.signup') }}" class="btn btn-lg btn-outline-light mt-3"
+                                   type="button">Зарегистрироваться!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        {% endif %}
-
-        <h1 class="h3 mb-3 font-weight-normal">Пожалуйста, войдите в систему</h1>
-
-        <div class="form-group">
-            <label for="inputEmail">Email</label>
-            <input type="text" value="{{ last_username }}" name="email" id="inputUsername" class="form-control" required
-                   autofocus>
         </div>
-        <div class="form-group">
-            <label for="inputPassword">Password</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" required>
-        </div>
-        <input type="hidden" name="_csrf_token"
-               value="{{ csrf_token('authenticate') }}"
-        >
+    </div>
 
-        <div class="form-group">
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="_remember_me"> Запомнить меня
-                </label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <button class="btn btn-lg btn-primary" type="submit">
-                Войти
-            </button>
-        </div>
-        <p>
-            <a href="{{ path('oauth.facebook') }}" class='btn btn-primary'>Войти через facebook</a>
-        </p>
-    </form>
 {% endblock %}

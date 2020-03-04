@@ -1,6 +1,8 @@
+@import "variables";
 @import "~@coreui/coreui/scss/coreui";
-@import "~simple-line-icons/scss/simple-line-icons";
-@import "~font-awesome/scss/font-awesome";
+@import "~@coreui/chartjs/scss/style";
+@import "~@coreui/icons/css/free.css";
+
 
 main {
   & > .container {

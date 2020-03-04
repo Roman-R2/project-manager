@@ -19,4 +19,10 @@ class Command
      * @Assert\NotBlank()
      */
     public $role;
+
+    public function __construct(string $id)
+    {
+        $this->id = $id;
+    }
+
 }
