@@ -26,6 +26,8 @@
                     <th>Email</th>
                     <td>
                         {{ user.email ?  : '' }}
+                        <a href="{{ path('profile.email') }}" class="btn btn-sm btn-outline-primary"><i
+                                    class="cil-pencil"></i></a>
 
                     </td>
                 </tr>
