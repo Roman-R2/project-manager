@@ -1,7 +1,7 @@
 version: '3'
 services:
   manager-nginx:
-    image: ${REGISTRY_ADDRESS}/manager-ngnix:${IMAGE_TAG}
+    image: ${REGISTRY_ADDRESS}/manager-nginx:${IMAGE_TAG}
     restart: always
     depends_on:
       - manager-php-fpm
@@ -12,14 +12,29 @@ services:
     restart: always
     environment:
       APP_SECRET: ${MANAGER_APP_SECRET}
-      DATABASE_URL: pgsql://app:${MANGER_DB_PASSWORD}@manager-postgres:5432/app
-      MAILER_URL: null://localhost
+      DATABASE_URL: pgsql://app:${MANAGER_DB_PASSWORD}@manager-postgres:5432/app
+      REDIS_HOST: manager-redis
+      REDIS_PASSWORD: ${MANAGER_REDIS_PASSWORD}
+      MAILER_URL: ${MANAGER_MAILER_URL}
+      OAUTH_FACEBOOK_SECRET: ${MANAGER_OAUTH_FACEBOOK_SECRET}
+      STORAGE_BASE_URL: ${STORAGE_BASE_URL}
+      MESSENGER_TRANSPORT_DSN: redis://manager-redis:6379/messages?password=${MANAGER_REDIS_PASSWORD}
+    depends_on:
+      - manager-postgres
+      - manager-redis
   manager-php-cli:
-      image: ${REGISTRY_ADDRESS}/manager-php-cli:${IMAGE_TAG}
-      environment:
-        APP_SECRET: ${MANAGER_APP_SECRET}
-        DATABASE_URL: pgsql://app:${MANGER_DB_PASSWORD}@manager-postgres:5432/app
-        MAILER_URL: null://localhost
+    image: ${REGISTRY_ADDRESS}/manager-php-cli:${IMAGE_TAG}
+    environment:
+      APP_SECRET: ${MANAGER_APP_SECRET}
+      DATABASE_URL: pgsql://app:${MANAGER_DB_PASSWORD}@manager-postgres:5432/app
+      REDIS_HOST: manager-redis
+      REDIS_PASSWORD: ${MANAGER_REDIS_PASSWORD}
+      MAILER_URL: ${MANAGER_MAILER_URL}
+      OAUTH_FACEBOOK_SECRET: ${MANAGER_OAUTH_FACEBOOK_SECRET}
+      MESSENGER_TRANSPORT_DSN: redis://manager-redis:6379/messages
+    depends_on:
+      - manager-postgres
+      - manager-redis
   manager-postgres:
     image: ${REGISTRY_ADDRESS}/manager-postgres:${IMAGE_TAG}
     restart: always
@@ -30,12 +45,16 @@ services:
       POSTGRES_PASSWORD: ${MANAGER_DB_PASSWORD}
       POSTGRES_DB: app
   manager-redis:
-    image: redis:3.0-alpine
+    image: redis:5.0-alpine
     restart: always
     volumes:
       - manager-redis:/data
     command:
       - 'redis-server'
+      - '--databases 2'
+      - '--save 900 1'
+      - '--save 300 10'
+      - '--save 60 10000'
       - '--requirepass ${MANAGER_REDIS_PASSWORD}'
 
 volumes:
