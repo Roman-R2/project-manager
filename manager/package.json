@@ -23,7 +23,7 @@
         "@coreui/icons": "^1.0.1",
         "@coreui/utils": "^1.2.2",
         "@popperjs/core": "^2.0.6",
-        "chart.js": "^2.9.3",
+        "chart.js": "^2.9.4",
         "perfect-scrollbar": "^1.5.0",
         "popper.js": "^1.16.1"
     }
